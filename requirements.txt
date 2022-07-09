@@ -1,0 +1,7 @@
+
+Flask==2.1.2
+flask-restx==0.5.1
+Jinja2==3.0.2
+marshmallow~=3.16.0
+SQLAlchemy==1.4.26
+Flask-SQLAlchemy==2.5.1
