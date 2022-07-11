@@ -1,3 +1,4 @@
+from flask import request
 from flask_restx import Resource, Namespace
 from implemented import movie_service
 
@@ -10,7 +11,9 @@ class MoviesView(Resource):
     @movies_ns.response(200, 'Success')
     @movies_ns.response(404, 'Movies not found')
     def get(self):
-        movies = movie_service.get_movies()
+        page = request.args.get('page')
+        status = request.args.get('status')
+        movies = movie_service.get_movies(page, status)
         return movies, 200
 
 
